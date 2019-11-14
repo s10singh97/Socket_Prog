@@ -6,9 +6,9 @@
 #include <string.h>
 #include <unistd.h>
 
-#define MAXLINE 1024 /*max text line length*/
+#define MAXLINE 4096 /*max text line length*/
 #define SERV_PORT 2017 /*port*/
-#define LISTENQ 20 /*maximum number of client connections*/
+#define LISTENQ 8 /*maximum number of client connections*/
 
 int main (int argc, char **argv)
 {
