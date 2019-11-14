@@ -55,14 +55,14 @@ int main (int argc, char **argv)
             //close listening socket
             close (listenfd);
 
-            // while ( (n = recv(connfd, buf, MAXLINE,0)) > 0)  {
-            //     printf("%s","String received from and resent to the client:");
-            //     puts(buf);
-            //     send(connfd, buf, n, 0);
-            // }
-            clock = time(NULL);
-            snprintf(buf, sizeof(buf), "%.24s\r\n", ctime(&clock));
-            write(connfd, buf, strlen(buf));
+            while ( (n = recv(connfd, buf, MAXLINE,0)) > 0)  {
+                printf("%s","String received from and resent to the client:");
+                puts(buf);
+                send(connfd, buf, n, 0);
+            }
+            // clock = time(NULL);
+            // snprintf(buf, sizeof(buf), "%.24s\r\n", ctime(&clock));
+            // write(connfd, buf, strlen(buf));
 
             if (n < 0)
             printf("%s\n", "Read error");
